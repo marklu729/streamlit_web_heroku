@@ -5,10 +5,22 @@ Created on Mon Nov  9 09:00:31 2020
 @author: markl
 """
 import streamlit as st
+import numpy as np
+import pandas as pd
+import io
+import requests
 
 st.title("Welcome to my website")
 st.subheader("Mark Lu (marklu@gmail.com)")
 st.text("Some text here")
+
+dataframe = np.random.randn(10,20)
+st.dataframe(dataframe)
+
+url_campus_stu_enr_count_1999_2018="https://raw.githubusercontent.com/marklu729/streamlit_web_heroku/main/data/annual_count_percent_district_1999_2018.csv"
+s_campus_stu_enr_count_1999_2018=requests.get(url_campus_stu_enr_count_1999_2018).content
+campus_stu_enr_count_1999_2018=pd.read_csv(io.StringIO(s_campus_stu_enr_count_1999_2018.decode('utf-8')))
+st.dataframe(campus_stu_enr_count_1999_2018.head())
 
 import streamlit.components.v1 as components
 
