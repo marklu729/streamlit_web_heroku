@@ -7,7 +7,7 @@ Created on Mon Nov  9 09:00:31 2020
 import streamlit as st
 
 st.title("Welcome to my website")
-st.subheader("Welcome to my Streamlit website")
+st.subheader("Mark Lu (marklu@gmail.com)")
 st.text("Some text here")
 
 import streamlit.components.v1 as components
